@@ -231,6 +231,11 @@ target_link_libraries(las
         ${Boost_LIBRARIES}
         ${PROJ_LIBRARIES})
 
+if (UNIX AND NOT APPLE)
+    target_link_libraries(las
+            boost_thread)
+endif ()
+
 target_link_libraries(las_c
         las)
 
